@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+# Tic Tac Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive Tic Tac Toe game built with React.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Play Tic Tac Toe against a friend or AI (if you extend the functionality).
+- Tracks the score of Player X and Player O.
+- Displays the game status (winner or draw).
+- Option to reset the game and clear the scores.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: For building the user interface.
+- **Tailwind CSS**: For styling and responsive layout.
+- **TypeScript**: For type safety.
+- **LocalStorage**: To store and persist the score across sessions.
 
-- Configure the top-level `parserOptions` property like this:
+## Components
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **App**: The main component which manages game state (board, scores, winner, etc.).
+2. **Board**: Displays the Tic Tac Toe grid and renders individual squares.
+3. **Square**: Represents an individual square on the grid, where players can click to mark their move.
+4. **ScoreBoard**: Displays the scores of Player X and Player O, with an option to clear the scores.
+5. **Utils**: Contains functions for game logic like `calculateWinner`, `isBoardFull`, and score management.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## How to Play
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Click on the squares to place your move (X or O).
+2. The game alternates turns between Player X and Player O.
+3. The first player to get 3 of their marks in a row, column, or diagonal wins the game.
+4. If the board is full and no one has won, the game ends in a draw.
+5. After the game ends, you can reset the game and clear the scores.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/tic-tac-toe.git
+   cd tic-tac-toe
+
+2. Install dependencies:
+   npm install
+
+3. Start the development server:
+   npm run dev
